@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import netlify from '@netlify/vite-plugin'
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/northstar-governance/' : '/',
   plugins: [react(), netlify()],
   test: {
     environment: 'jsdom',
